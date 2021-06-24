@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask
+  labels:
+    app: helloworld-flask
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: helloworld-flask
+  template:
+    metadata:
+      labels:
+        app: helloworld-flask
+    spec:
+      containers:
+      - name: flask
+        image: igev/helloworld-flask:v1
+        ports:
+        - containerPort: 5000

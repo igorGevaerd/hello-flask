@@ -1,4 +1,4 @@
-FROM python:3.9.5
+FROM python:3.9.5-alpine
 
 WORKDIR /app
 
@@ -9,5 +9,4 @@ COPY . .
 
 EXPOSE 5000
 
-#CMD ["python3", "-m", "flask", "run", "--host=0.0.0.0"]
 CMD ["python", "app.py"]
